@@ -27,7 +27,25 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="min-h-screen w-full bg-white relative">
+          {/* Light Greenish Gradient Grid Background */}
+          <div
+            className="fixed inset-0 z-0"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, #f0f0f0 1px, transparent 1px),
+                linear-gradient(to bottom, #f0f0f0 1px, transparent 1px),
+                radial-gradient(circle 800px at 0% 200px, #c5f0d5, transparent)
+              `,
+              backgroundSize: "96px 64px, 96px 64px, 100% 100%",
+            }}
+          />
+          
+          {/* Content Container */}
+          <div className="relative z-10">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
